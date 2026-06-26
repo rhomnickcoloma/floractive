@@ -136,7 +136,7 @@ export default function Home() {
             <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Link
                 href="/products"
-                className="btn-shine group inline-flex items-center justify-center gap-3 bg-gold px-9 py-4 text-xs uppercase tracking-[0.22em] text-noir transition-all hover:bg-gold-light"
+                className="btn-shine group inline-flex items-center justify-center gap-3 bg-rose px-9 py-4 text-xs uppercase tracking-[0.22em] text-cream transition-all hover:bg-rose-deep"
               >
                 Discover Products
                 <span className="transition-transform group-hover:translate-x-1">
@@ -195,8 +195,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      <DiagonalDivider top="cream-deep" bottom="cream" />
 
       {/* ---------------- BRAND STATEMENT ---------------- */}
       <section className="mx-auto max-w-5xl px-6 py-28 text-center lg:px-10 lg:py-36">
@@ -548,7 +546,7 @@ export default function Home() {
             </p>
             <Link
               href="/contact"
-              className="btn-shine mt-10 inline-flex items-center justify-center gap-3 bg-gold px-9 py-4 text-xs uppercase tracking-[0.22em] text-noir transition-all hover:bg-gold-light"
+              className="btn-shine mt-10 inline-flex items-center justify-center gap-3 bg-rose px-9 py-4 text-xs uppercase tracking-[0.22em] text-cream transition-all hover:bg-rose-deep"
             >
               Partner With Us <span>→</span>
             </Link>
