@@ -3,6 +3,7 @@ import { Playfair_Display, Jost } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { SiteChrome } from "@/components/site-chrome";
 
 const serif = Playfair_Display({
   variable: "--font-serif",
@@ -34,6 +35,7 @@ export default function RootLayout({
       className={`${serif.variable} ${sans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink font-sans">
+        <SiteChrome />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

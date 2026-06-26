@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #f7f3ec;
-  --color-cream-deep: #efe7da;
-  --color-ink: #1c1916;
-  --color-ink-soft: #4a443d;
-  --color-gold: #f10a70;
-  --color-gold-light: #ff5ba3;
-  --color-gold-soft: #fbd0e3;
-  --color-noir: #14110e;
+  --color-cream: #f8f6f1;
+  --color-cream-deep: #eeeae1;
+  --color-ink: #1d1a15;
+  --color-ink-soft: #585249;
+  --color-gold: #f59d8c;
+  --color-gold-light: #f9bcb0;
+  --color-gold-soft: #fcded7;
+  --color-noir: #17140f;
 
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
@@ -17,8 +17,8 @@
 }
 
 :root {
-  --background: #f7f3ec;
-  --foreground: #1c1916;
+  --background: #f8f6f1;
+  --foreground: #1d1a15;
 }
 
 @layer base {
@@ -37,8 +37,8 @@
   }
 
   ::selection {
-    background: #f10a70;
-    color: #f7f3ec;
+    background: #f59d8c;
+    color: #17140f;
   }
 }
 
@@ -53,6 +53,70 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Shimmering foil gradient for accent words */
+  .text-foil {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-gold) 0%,
+      var(--color-gold-light) 45%,
+      #fde9e3 55%,
+      var(--color-gold) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: foil 7s linear infinite;
+  }
+
+  /* Animated light sweep on buttons */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 45%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.55),
+      transparent
+    );
+    transform: translateX(-160%) skewX(-20deg);
+    pointer-events: none;
+  }
+  .btn-shine:hover::after {
+    animation: shine 0.9s ease;
+  }
+
+  /* Hairline ornament divider */
+  .hairline {
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      var(--color-gold),
+      transparent
+    );
+  }
+
+  /* Decorative drop-cap for editorial paragraphs */
+  .dropcap::first-letter {
+    font-family: var(--font-serif), serif;
+    font-weight: 700;
+    font-size: 3.4em;
+    line-height: 0.8;
+    float: left;
+    margin: 0.08em 0.12em 0 0;
+    color: var(--color-gold);
   }
 }
 
@@ -70,6 +134,48 @@
   animation: marquee 32s linear infinite;
 }
 
+@keyframes foil {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes shine {
+  to {
+    transform: translateX(320%) skewX(-20deg);
+  }
+}
+
+@keyframes cue {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(7px);
+    opacity: 1;
+  }
+}
+
+.animate-cue {
+  animation: cue 1.8s ease-in-out infinite;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .text-foil,
+  .animate-cue {
+    animation: none !important;
+  }
+  .btn-shine:hover::after {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }
