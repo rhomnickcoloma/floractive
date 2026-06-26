@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
+@theme {
+  --color-cream: #f7f3ec;
+  --color-cream-deep: #efe7da;
+  --color-ink: #1c1916;
+  --color-ink-soft: #4a443d;
+  --color-gold: #f10a70;
+  --color-gold-light: #ff5ba3;
+  --color-gold-soft: #fbd0e3;
+  --color-noir: #14110e;
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+
+  --tracking-luxe: 0.28em;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f3ec;
+  --foreground: #1c1916;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    font-family: var(--font-sans), "Jost", system-ui, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif), "Playfair Display", Georgia, serif;
+    font-weight: 600;
+  }
+
+  ::selection {
+    background: #f10a70;
+    color: #f7f3ec;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .eyebrow {
+    font-family: var(--font-sans), sans-serif;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-luxe);
+    font-weight: 400;
+    font-size: 0.72rem;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Subtle marquee for the trust strip */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+html {
+  scroll-behavior: smooth;
 }
