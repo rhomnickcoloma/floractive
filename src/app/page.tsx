@@ -214,7 +214,7 @@ export default function Home() {
       </section>
 
       {/* ---------------- FULL-BLEED IMAGE BAND ---------------- */}
-      <section className="relative h-[70vh] overflow-hidden">
+      <section className="relative h-[70vh] overflow-hidden bg-noir">
         <Image
           src="/images/hero-band.jpg"
           alt="Long, healthy, reconstructed hair"
@@ -222,9 +222,13 @@ export default function Home() {
           priority
           quality={90}
           sizes="100vw"
-          className="object-cover object-[center_25%]"
+          className="object-cover object-[center_25%] grayscale"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-noir/70 via-noir/10 to-transparent" />
+        {/* Rose-gold duotone tint */}
+        <div className="absolute inset-0 bg-gradient-to-br from-rose via-rose/75 to-gold-light mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gold-soft/15 mix-blend-soft-light" />
+        {/* Legibility gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-noir/75 via-noir/10 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 mx-auto max-w-7xl px-6 pb-14 lg:px-10">
           <Reveal>
             <p className="max-w-2xl font-serif text-3xl font-light italic leading-snug text-cream sm:text-4xl">
