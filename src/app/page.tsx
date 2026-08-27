@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { CountUp } from "@/components/count-up";
 import { DiagonalDivider } from "@/components/diagonal-divider";
+import productsData from "@/data/products.json";
+
+const FEATURED_PRODUCTS = productsData.products.filter((p) => p.featured);
 
 const MARQUEE_ITEMS = [
   "Formaldehyde-Free",
@@ -39,37 +42,10 @@ const STATS: Stat[] = [
   { display: "1st", label: "Original Nanoplasty" },
 ];
 
-const PRODUCTS = [
-  {
-    name: "W One",
-    line: "Premium Original Nanoplasty",
-    category: "Straightening",
-    initials: "W1",
-  },
-  {
-    name: "WTwo Plex",
-    line: "Nanoplasty for Blonde & Fragile Hair",
-    category: "Straightening",
-    initials: "W2",
-  },
-  {
-    name: "Blue Tox",
-    line: "Taninoplasty Smoothing Treatment",
-    category: "Smoothing",
-    initials: "BT",
-  },
-  {
-    name: "BTX Mandoca",
-    line: "Bio Botox Reconstruction",
-    category: "Reconstruction",
-    initials: "BX",
-  },
-];
-
 const GALLERY = [
-  { src: "/images/wash.jpg", caption: "Cleanse & Prepare" },
-  { src: "/images/styling.jpg", caption: "Apply & Reconstruct" },
-  { src: "/images/blowdry.jpg", caption: "Seal & Finish" },
+  { src: "/images/web-images/Floractive_06.jpg", caption: "Cleanse & Prepare" },
+  { src: "/images/web-images/Floractive_25.jpg", caption: "Apply & Reconstruct" },
+  { src: "/images/web-images/Floractive_05.jpg", caption: "Seal & Finish" },
 ];
 
 const REVIEWS = [
@@ -98,18 +74,21 @@ export default function Home() {
     <>
       {/* ---------------- HERO ---------------- */}
       <section className="relative isolate overflow-hidden bg-noir text-cream">
-        <video
-          className="absolute inset-0 h-full w-full object-cover opacity-50"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/hero-portrait.jpg"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-noir/90 via-noir/60 to-noir/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-noir/40" />
+        {/* Editorial image on the right, blended into the noir panel */}
+        <div className="absolute inset-y-0 right-0 w-full lg:w-3/5">
+          <Image
+            src="/images/web-images/Floractive_01.jpg"
+            alt="Long, glossy, healthy hair"
+            fill
+            priority
+            quality={90}
+            sizes="(max-width: 1024px) 100vw, 60vw"
+            className="object-cover object-[center_20%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-noir via-noir/55 to-transparent lg:via-noir/25" />
+          <div className="absolute inset-0 bg-noir/40 lg:bg-transparent" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-noir/30" />
 
         <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-center px-6 py-28 lg:px-10">
           <Reveal delay={80}>
@@ -216,19 +195,18 @@ export default function Home() {
       {/* ---------------- FULL-BLEED IMAGE BAND ---------------- */}
       <section className="relative h-[70vh] overflow-hidden bg-noir">
         <Image
-          src="/images/hero-band.jpg"
+          src="/images/web-images/Floractive_22.jpg"
           alt="Long, healthy, reconstructed hair"
           fill
           priority
           quality={90}
           sizes="100vw"
-          className="object-cover object-[center_25%] grayscale"
+          className="object-cover object-[center_25%]"
         />
-        {/* Rose-gold duotone tint */}
-        <div className="absolute inset-0 bg-gradient-to-br from-rose via-rose/75 to-gold-light mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gold-soft/15 mix-blend-soft-light" />
+        {/* Faint rose warmth */}
+        <div className="absolute inset-0 bg-gradient-to-br from-rose/15 via-transparent to-gold-light/10 mix-blend-soft-light" />
         {/* Legibility gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-noir/75 via-noir/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-noir/80 via-noir/15 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 mx-auto max-w-7xl px-6 pb-14 lg:px-10">
           <Reveal>
             <p className="max-w-2xl font-serif text-3xl font-light italic leading-snug text-cream sm:text-4xl">
@@ -244,16 +222,13 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-16 px-6 py-28 lg:grid-cols-2 lg:px-10 lg:py-36">
           <Reveal className="lg:sticky lg:top-32 lg:self-start">
             <div className="relative aspect-[4/5] w-full overflow-hidden">
-              <video
-                className="absolute inset-0 h-full w-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster="/images/nanoplasty.jpg"
-              >
-                <source src="/videos/flowing.mp4" type="video/mp4" />
-              </video>
+              <Image
+                src="/images/web-images/Floractive_08.jpg"
+                alt="Nanoplasty hair transformation"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
               <div className="absolute inset-0 ring-1 ring-inset ring-gold/20" />
             </div>
           </Reveal>
@@ -314,29 +289,23 @@ export default function Home() {
         </Reveal>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {PRODUCTS.map((product, i) => (
-            <Reveal key={product.name} delay={i * 110}>
-              <Link href="/products" className="group block">
-                <div className="relative flex aspect-[3/4] items-end justify-center overflow-hidden bg-gradient-to-b from-[#241d18] to-noir">
-                  <div className="absolute -right-10 top-0 h-40 w-40 rounded-full bg-gold/25 blur-3xl transition-opacity duration-500 group-hover:opacity-80" />
-                  <span className="absolute left-5 top-5 text-[10px] uppercase tracking-[0.2em] text-gold-light">
+          {FEATURED_PRODUCTS.map((product, i) => (
+            <Reveal key={product.id} delay={i * 110}>
+              <Link href={`/products/${product.slug}`} className="group block">
+                <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream-deep">
+                  <div className="absolute -right-10 top-0 h-40 w-40 rounded-full bg-gold/15 blur-3xl transition-opacity duration-500 group-hover:opacity-90" />
+                  <span className="absolute left-5 top-5 z-10 text-[10px] uppercase tracking-[0.2em] text-gold">
                     {product.category}
                   </span>
 
-                  {/* Bottle */}
-                  <div className="relative mb-0 flex flex-col items-center transition-transform duration-500 group-hover:-translate-y-2">
-                    <span className="h-5 w-6 rounded-t-sm bg-cream/85" />
-                    <span className="h-2.5 w-4 bg-cream/70" />
-                    <div className="relative h-44 w-24 rounded-2xl bg-gradient-to-b from-cream to-[#e6d7c2] shadow-[0_24px_45px_-18px_rgba(0,0,0,0.7)]">
-                      <div className="absolute inset-x-3 top-1/2 -translate-y-1/2 rounded bg-white/85 py-3 text-center">
-                        <p className="text-[8px] uppercase tracking-[0.22em] text-ink/50">
-                          Floractive
-                        </p>
-                        <p className="font-serif text-2xl font-bold text-gold">
-                          {product.initials}
-                        </p>
-                      </div>
-                    </div>
+                  <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
+                    <Image
+                      src={product.image}
+                      alt={`${product.name} — ${product.subtitle}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-contain p-8"
+                    />
                   </div>
                 </div>
 
@@ -344,7 +313,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-semibold text-ink">
                     {product.name}
                   </h3>
-                  <p className="mt-1 text-sm text-ink-soft">{product.line}</p>
+                  <p className="mt-1 text-sm text-ink-soft">{product.subtitle}</p>
                   <span className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold transition-all group-hover:gap-4">
                     Discover <span>→</span>
                   </span>
@@ -464,7 +433,7 @@ export default function Home() {
           <Reveal className="lg:col-span-5">
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-noir">
               <Image
-                src="/images/salon.jpg"
+                src="/images/web-images/Floractive_15.jpg"
                 alt="A modern professional salon"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -524,7 +493,7 @@ export default function Home() {
           <Reveal className="lg:order-2">
             <div className="relative aspect-[4/5] w-full overflow-hidden">
               <Image
-                src="/images/filipina.jpg"
+                src="/images/web-images/Floractive_21.jpg"
                 alt="Celebrating diverse, beautiful hair"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
