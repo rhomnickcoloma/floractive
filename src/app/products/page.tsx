@@ -19,7 +19,6 @@ const CATEGORY_ORDER = [
   "Reconstruction",
   "Treatment",
   "Home Care",
-  "Finishing",
 ] as const;
 
 const CATEGORIES = CATEGORY_ORDER.map((category) => ({
@@ -33,7 +32,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
       <Link href={`/products/${product.slug}`} className="group block">
         <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream-deep">
           <div className="absolute -right-10 top-0 h-40 w-40 rounded-full bg-gold/15 blur-3xl transition-opacity duration-500 group-hover:opacity-90" />
-          <span className="absolute left-5 top-5 z-10 text-[10px] uppercase tracking-[0.2em] text-gold">
+          <span className="absolute left-5 top-5 z-10 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">
             {product.category}
           </span>
           <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
@@ -106,7 +105,7 @@ export default function ProductsPage() {
             <a
               key={group.category}
               href={`#${group.category.toLowerCase().replace(/\s+/g, "-")}`}
-              className="text-xs uppercase tracking-[0.2em] text-ink-soft transition-colors hover:text-gold"
+              className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-soft transition-colors hover:text-gold"
             >
               {group.category}
             </a>
@@ -168,10 +167,10 @@ export default function ProductsPage() {
           </Reveal>
           <Reveal delay={140}>
             <Link
-              href="mailto:hello@floractive.ph"
+              href="mailto:floractive@filiamph.com"
               className="btn-shine inline-flex items-center justify-center gap-3 bg-noir px-10 py-5 text-xs uppercase tracking-[0.22em] text-cream transition-colors hover:bg-gold hover:text-noir"
             >
-              hello@floractive.ph <span>→</span>
+              floractive@filiamph.com <span>→</span>
             </Link>
           </Reveal>
         </div>

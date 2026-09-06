@@ -120,7 +120,7 @@ export default async function ProductDetailPage({
             </dl>
 
             <Link
-              href="mailto:hello@floractive.ph"
+              href="mailto:floractive@filiamph.com"
               className="btn-shine mt-10 inline-flex items-center justify-center gap-3 bg-rose px-9 py-4 text-xs uppercase tracking-[0.22em] text-cream transition-all hover:bg-rose-deep"
             >
               Inquire to Order <span>→</span>

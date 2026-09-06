@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const FACEBOOK = "https://www.facebook.com/floractivephilippines";
 const INSTAGRAM = "https://www.instagram.com/floractivephilippines/";
+const TIKTOK = "https://www.tiktok.com/@floractivephilippines";
 
 export function SiteFooter() {
   return (
@@ -24,13 +25,13 @@ export function SiteFooter() {
             <p className="eyebrow text-gold">Explore</p>
             <ul className="mt-5 space-y-3 text-sm text-cream/70">
               <li>
-                <Link href="/products" className="hover:text-gold">
-                  Products
+                <Link href="/nanoplasty" className="hover:text-gold">
+                  What is Nanoplasty?
                 </Link>
               </li>
               <li>
-                <Link href="/nanoplasty" className="hover:text-gold">
-                  What is Nanoplasty?
+                <Link href="/products" className="hover:text-gold">
+                  Products
                 </Link>
               </li>
               <li>
@@ -39,30 +40,23 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/reviews" className="hover:text-gold">
-                  Reviews
+                <Link href="/contact" className="hover:text-gold">
+                  Contact
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <p className="eyebrow text-gold">For Salons</p>
+            <p className="eyebrow text-gold">Contact</p>
             <ul className="mt-5 space-y-3 text-sm text-cream/70">
               <li>
-                <Link href="/login" className="hover:text-gold">
-                  Salon Login
-                </Link>
+                <a href="mailto:floractive@filiamph.com" className="hover:text-gold">
+                  floractive@filiamph.com
+                </a>
               </li>
-              <li>
-                <Link href="/contact" className="hover:text-gold">
-                  Become a Partner
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-gold">
-                  Wholesale Inquiries
-                </Link>
+              <li className="text-cream/60">
+                Distributed by FILIAM Business Ventures, Inc.
               </li>
             </ul>
           </div>
@@ -81,11 +75,8 @@ export function SiteFooter() {
                 </a>
               </li>
               <li>
-                <span className="text-cream/70">TikTok — Floractive Philippines</span>
-              </li>
-              <li>
-                <a href="mailto:hello@floractive.ph" className="hover:text-gold">
-                  hello@floractive.ph
+                <a href={TIKTOK} target="_blank" rel="noreferrer" className="hover:text-gold">
+                  TikTok
                 </a>
               </li>
             </ul>

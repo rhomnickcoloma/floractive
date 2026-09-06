@@ -48,27 +48,6 @@ const GALLERY = [
   { src: "/images/web-images/Floractive_05.jpg", caption: "Seal & Finish" },
 ];
 
-const REVIEWS = [
-  {
-    quote:
-      "My hair has always been dry and frizzy. After Nanoplasty it looks perfect — healthy, shiny, and effortless. Nothing else has worked like this.",
-    author: "Marichu D.",
-    role: "Quezon City",
-  },
-  {
-    quote:
-      "The only treatment that truly lasts. My hair feels silky and smooth, and waking up to perfectly straight hair every day is so worth it.",
-    author: "Ana Patricia L.",
-    role: "Makati",
-  },
-  {
-    quote:
-      "As a stylist, Floractive lets me offer a 100% safe, premium straightening service. My clients are obsessed and so am I.",
-    author: "Joanna R.",
-    role: "Salon Owner, Cebu",
-  },
-];
-
 export default function Home() {
   return (
     <>
@@ -294,7 +273,7 @@ export default function Home() {
               <Link href={`/products/${product.slug}`} className="group block">
                 <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream-deep">
                   <div className="absolute -right-10 top-0 h-40 w-40 rounded-full bg-gold/15 blur-3xl transition-opacity duration-500 group-hover:opacity-90" />
-                  <span className="absolute left-5 top-5 z-10 text-[10px] uppercase tracking-[0.2em] text-gold">
+                  <span className="absolute left-5 top-5 z-10 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">
                     {product.category}
                   </span>
 
@@ -527,41 +506,7 @@ export default function Home() {
         </div>
       </section>
 
-      <DiagonalDivider top="noir" bottom="cream" />
-
-      {/* ---------------- REVIEWS ---------------- */}
-      <section className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
-        <Reveal>
-          <div className="text-center">
-            <p className="eyebrow text-gold">Loved by Clients &amp; Salons</p>
-            <span className="hairline mx-auto mt-6 block w-16" />
-            <h2 className="mt-6 text-balance text-4xl font-bold leading-tight text-ink sm:text-5xl">
-              Transformations that speak for themselves
-            </h2>
-          </div>
-        </Reveal>
-
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
-          {REVIEWS.map((review, i) => (
-            <Reveal key={review.author} delay={i * 120}>
-              <figure className="flex h-full flex-col border border-ink/10 bg-cream-deep/40 p-9 transition-shadow duration-500 hover:shadow-[0_30px_60px_-30px_rgba(28,25,22,0.35)]">
-                <div className="text-gold">★★★★★</div>
-                <blockquote className="mt-6 flex-1 font-serif text-xl font-light italic leading-relaxed text-ink">
-                  “{review.quote}”
-                </blockquote>
-                <figcaption className="mt-8 border-t border-ink/10 pt-6">
-                  <p className="text-sm font-medium uppercase tracking-[0.15em] text-ink">
-                    {review.author}
-                  </p>
-                  <p className="mt-1 text-sm text-ink-soft">{review.role}</p>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <DiagonalDivider top="cream" bottom="cream-deep" flip />
+      <DiagonalDivider top="noir" bottom="cream-deep" />
 
       {/* ---------------- CONTACT CTA ---------------- */}
       <section className="bg-cream-deep">
@@ -572,15 +517,17 @@ export default function Home() {
               Bring the Original Nanoplasty to your salon
             </h2>
             <p className="mt-6 text-lg text-ink-soft">
-              Reach out for partnership, wholesale and professional inquiries.
+              Whether you&apos;re looking for expert product advice, professional
+              support, or simply have a question, our dedicated team is always
+              happy to assist.
             </p>
           </Reveal>
           <Reveal delay={140}>
             <Link
-              href="mailto:hello@floractive.ph"
+              href="mailto:floractive@filiamph.com"
               className="btn-shine inline-flex items-center justify-center gap-3 bg-noir px-10 py-5 text-xs uppercase tracking-[0.22em] text-cream transition-colors hover:bg-gold hover:text-noir"
             >
-              hello@floractive.ph <span>→</span>
+              floractive@filiamph.com <span>→</span>
             </Link>
           </Reveal>
         </div>

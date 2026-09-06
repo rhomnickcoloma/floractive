@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #f8f6f1;
-  --color-cream-deep: #eeeae1;
-  --color-ink: #1d1a15;
-  --color-ink-soft: #585249;
-  --color-gold: #f59d8c;
-  --color-gold-light: #f9bcb0;
-  --color-gold-soft: #fcded7;
-  --color-rose: #ef836d;
-  --color-rose-deep: #e86f57;
-  --color-noir: #17140f;
+  /* Neutral salon palette — warm whites, tan & brown, no pure black */
+  --color-cream: #faf7f1;
+  --color-cream-deep: #efe7db;
+  --color-ink: #2b231d;
+  --color-ink-soft: #6e6156;
+  --color-gold: #b08968;
+  --color-gold-light: #ccab8b;
+  --color-gold-soft: #eaddcc;
+  --color-rose: #9a7856;
+  --color-rose-deep: #7e6044;
+  --color-noir: #241c16;
 
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
@@ -19,13 +20,13 @@
 }
 
 :root {
-  --background: #f8f6f1;
-  --foreground: #1d1a15;
+  --background: #faf7f1;
+  --foreground: #2b231d;
 }
 
 @layer base {
   body {
-    font-family: var(--font-sans), "Jost", system-ui, sans-serif;
+    font-family: var(--font-sans), "Poppins", system-ui, sans-serif;
     font-weight: 400;
     letter-spacing: 0.01em;
   }
@@ -39,8 +40,8 @@
   }
 
   ::selection {
-    background: #f59d8c;
-    color: #17140f;
+    background: #b08968;
+    color: #faf7f1;
   }
 }
 
@@ -49,7 +50,7 @@
     font-family: var(--font-sans), sans-serif;
     text-transform: uppercase;
     letter-spacing: var(--tracking-luxe);
-    font-weight: 400;
+    font-weight: 600;
     font-size: 0.72rem;
   }
 
@@ -63,7 +64,7 @@
       100deg,
       var(--color-gold) 0%,
       var(--color-gold-light) 45%,
-      #fde9e3 55%,
+      #f3e6d3 55%,
       var(--color-gold) 100%
     );
     background-size: 200% auto;
