@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { CountUp } from "@/components/count-up";
-import { DiagonalDivider } from "@/components/diagonal-divider";
+import { SectionDivider } from "@/components/section-divider";
 import productsData from "@/data/products.json";
 
 const FEATURED_PRODUCTS = productsData.products.filter((p) => p.featured);
@@ -246,7 +246,7 @@ export default function Home() {
         </div>
       </section>
 
-      <DiagonalDivider top="noir" bottom="cream" />
+      <SectionDivider tone="cream" />
 
       {/* ---------------- SIGNATURE COLLECTION ---------------- */}
       <section className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
@@ -271,7 +271,7 @@ export default function Home() {
           {FEATURED_PRODUCTS.map((product, i) => (
             <Reveal key={product.id} delay={i * 110}>
               <Link href={`/products/${product.slug}`} className="group block">
-                <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream-deep">
+                <div className="card-lift relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream-deep">
                   <div className="absolute -right-10 top-0 h-40 w-40 rounded-full bg-gold/15 blur-3xl transition-opacity duration-500 group-hover:opacity-90" />
                   <span className="absolute left-5 top-5 z-10 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">
                     {product.category}
@@ -303,7 +303,7 @@ export default function Home() {
         </div>
       </section>
 
-      <DiagonalDivider top="cream" bottom="cream-deep" flip />
+      <SectionDivider tone="cream-deep" />
 
       {/* ---------------- WHY PROFESSIONALS / STATS ---------------- */}
       <section className="bg-cream-deep">
@@ -362,7 +362,7 @@ export default function Home() {
         </div>
       </section>
 
-      <DiagonalDivider top="cream-deep" bottom="cream" />
+      <SectionDivider tone="cream" />
 
       {/* ---------------- SALON PROCESS GALLERY ---------------- */}
       <section className="bg-cream">
@@ -404,7 +404,7 @@ export default function Home() {
         </div>
       </section>
 
-      <DiagonalDivider top="cream" bottom="cream-deep" flip />
+      <SectionDivider tone="cream-deep" />
 
       {/* ---------------- THE STORY ---------------- */}
       <section className="bg-cream-deep">
@@ -464,7 +464,7 @@ export default function Home() {
         </div>
       </section>
 
-      <DiagonalDivider top="cream-deep" bottom="noir" />
+      <SectionDivider tone="noir" />
 
       {/* ---------------- FLORACTIVE PHILIPPINES ---------------- */}
       <section className="relative overflow-hidden bg-noir text-cream">
@@ -506,7 +506,7 @@ export default function Home() {
         </div>
       </section>
 
-      <DiagonalDivider top="noir" bottom="cream-deep" />
+      <SectionDivider tone="cream-deep" />
 
       {/* ---------------- CONTACT CTA ---------------- */}
       <section className="bg-cream-deep">

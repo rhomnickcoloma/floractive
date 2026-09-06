@@ -50,7 +50,7 @@ export function Reveal({ children, className = "", delay = 0, y = 26 }: RevealPr
       style={{
         opacity: shown ? 1 : 0,
         transform: shown ? "none" : `translateY(${y}px)`,
-        transition: `opacity 900ms cubic-bezier(0.22,0.61,0.36,1) ${delay}ms, transform 900ms cubic-bezier(0.22,0.61,0.36,1) ${delay}ms`,
+        transition: `opacity 1100ms cubic-bezier(0.16,1,0.3,1) ${delay}ms, transform 1100ms cubic-bezier(0.16,1,0.3,1) ${delay}ms`,
         willChange: "opacity, transform",
       }}
     >

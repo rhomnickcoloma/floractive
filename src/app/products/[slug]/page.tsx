@@ -152,7 +152,7 @@ export default async function ProductDetailPage({
                     href={`/products/${item.slug}`}
                     className="group block"
                   >
-                    <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream">
+                    <div className="card-lift relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream">
                       <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
                         <Image
                           src={item.image}

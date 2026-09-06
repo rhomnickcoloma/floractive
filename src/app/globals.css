@@ -22,6 +22,7 @@
 :root {
   --background: #faf7f1;
   --foreground: #2b231d;
+  --ease-luxe: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
@@ -37,6 +38,14 @@
   h4 {
     font-family: var(--font-serif), "Playfair Display", Georgia, serif;
     font-weight: 600;
+  }
+
+  /* Tighter optical tracking on large display headings for a couture feel */
+  h1 {
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    letter-spacing: -0.015em;
   }
 
   ::selection {
@@ -56,6 +65,24 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Editorial reading measure */
+  .measure {
+    max-width: 62ch;
+  }
+
+  /* Premium card lift on hover */
+  .card-lift {
+    transition:
+      transform 600ms var(--ease-luxe),
+      box-shadow 600ms var(--ease-luxe);
+    will-change: transform;
+  }
+  .group:hover .card-lift,
+  .card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 40px 70px -32px rgba(43, 35, 29, 0.4);
   }
 
   /* Shimmering foil gradient for accent words */
@@ -165,6 +192,138 @@
   animation: cue 1.8s ease-in-out infinite;
 }
 
+/* Page transition — fade/rise on route change (via app/template.tsx) */
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: pageIn 620ms var(--ease-luxe) both;
+}
+
+/* Custom cursor */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-ready * {
+    cursor: none !important;
+  }
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  height: 8px;
+  width: 8px;
+  border-radius: 9999px;
+  background: var(--color-ink);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    width 300ms var(--ease-luxe),
+    height 300ms var(--ease-luxe),
+    background-color 300ms var(--ease-luxe);
+  mix-blend-mode: multiply;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  height: 40px;
+  width: 40px;
+  border-radius: 9999px;
+  border: 1px solid rgba(43, 35, 29, 0.35);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    width 350ms var(--ease-luxe),
+    height 350ms var(--ease-luxe),
+    border-color 350ms var(--ease-luxe),
+    background-color 350ms var(--ease-luxe);
+}
+
+.cursor-hover .cursor-ring {
+  width: 64px;
+  height: 64px;
+  border-color: var(--color-gold);
+  background: rgba(176, 137, 104, 0.08);
+}
+
+.cursor-hover .cursor-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--color-gold);
+}
+
+/* Preloader */
+@keyframes preFade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes preLine {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes preRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background: var(--color-noir);
+  color: var(--color-cream);
+  animation: preFade 700ms var(--ease-luxe) forwards;
+  animation-delay: 1500ms;
+}
+
+.preloader__word {
+  animation: preRise 900ms var(--ease-luxe) both;
+}
+
+.preloader__line {
+  height: 1px;
+  width: 140px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
+  transform-origin: center;
+  animation: preLine 1100ms var(--ease-luxe) 200ms both;
+}
+
 html {
   /* Scale everything up slightly (17px base) so type reads comfortably,
      including on high-DPI / "More Space" scaled displays. */
@@ -182,11 +341,21 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
   .text-foil,
-  .animate-cue {
+  .animate-cue,
+  .page-transition,
+  .preloader__word,
+  .preloader__line {
     animation: none !important;
+  }
+  .preloader {
+    animation-delay: 0ms;
+    animation-duration: 300ms;
   }
   .btn-shine:hover::after {
     animation: none !important;
+  }
+  .card-lift {
+    transition: none;
   }
   html {
     scroll-behavior: auto;
