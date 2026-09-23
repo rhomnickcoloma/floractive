@@ -14,7 +14,6 @@ const MARQUEE_ITEMS = [
   "70,000+ Salons Worldwide",
   "100+ Countries",
   "The Original Nanoplasty",
-  "100% Pure · Chemical-Free",
 ];
 
 const BENEFITS = [
@@ -52,8 +51,8 @@ export default function Home() {
   return (
     <>
       {/* ---------------- HERO ---------------- */}
-      <section className="relative isolate overflow-hidden bg-noir text-cream">
-        {/* Editorial image on the right, blended into the noir panel */}
+      <section className="relative isolate overflow-hidden bg-cream text-ink">
+        {/* Editorial image on the right, blended into the clean cream panel */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-3/5">
           <Image
             src="/images/web-images/Floractive_01.jpg"
@@ -64,26 +63,26 @@ export default function Home() {
             sizes="(max-width: 1024px) 100vw, 60vw"
             className="object-cover object-[center_20%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-noir via-noir/55 to-transparent lg:via-noir/25" />
-          <div className="absolute inset-0 bg-noir/40 lg:bg-transparent" />
+          {/* Soft blend only on the far-left edge so the seam with the cream
+              panel is smooth — fades to transparent well before the model */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-cream),transparent_30%)]" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-noir/30" />
 
         <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-center px-6 py-28 lg:px-10">
           <Reveal delay={80}>
-            <p className="eyebrow font-semibold text-gold-light">
+            <p className="eyebrow font-bold text-gold">
               The Origin of Nanoplasty · Brazil
             </p>
           </Reveal>
           <Reveal delay={200}>
-            <h1 className="mt-6 max-w-4xl text-balance text-5xl font-extrabold leading-[1.05] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 max-w-4xl text-balance text-5xl font-extrabold leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
               The Original{" "}
               <span className="italic text-foil">Brazilian Nanoplasty</span> by
               Floractive
             </h1>
           </Reveal>
           <Reveal delay={340}>
-            <p className="mt-8 max-w-xl text-lg font-medium leading-relaxed text-cream/85">
+            <p className="mt-8 max-w-xl text-xl font-medium leading-relaxed text-ink-soft">
               100% pure, chemical-free, formaldehyde-free and glyoxylic acid free
               — delivering powerful hair reconstruction and straightening. Vegan
               &amp; halal-friendly.
@@ -94,7 +93,7 @@ export default function Home() {
             <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Link
                 href="/products"
-                className="btn-shine group inline-flex items-center justify-center gap-3 bg-rose px-9 py-4 text-xs uppercase tracking-[0.22em] text-cream transition-all hover:bg-rose-deep"
+                className="btn-shine group inline-flex items-center justify-center gap-3 bg-rose px-9 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-rose-deep"
               >
                 Discover Products
                 <span className="transition-transform group-hover:translate-x-1">
@@ -103,7 +102,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/nanoplasty"
-                className="inline-flex items-center justify-center gap-3 border border-cream/30 px-9 py-4 text-xs uppercase tracking-[0.22em] text-cream backdrop-blur-sm transition-colors hover:border-gold-light hover:text-gold-light"
+                className="inline-flex items-center justify-center gap-3 border-2 border-ink/70 px-9 py-4 text-sm font-bold uppercase tracking-[0.16em] text-ink transition-colors hover:border-gold hover:text-gold"
               >
                 What is Nanoplasty?
               </Link>
@@ -111,19 +110,21 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={620}>
-            <div className="mt-20 flex flex-wrap items-center gap-x-10 gap-y-4 text-xs uppercase tracking-[0.18em] text-cream/55">
+            <div className="mt-20 flex flex-wrap items-center gap-x-10 gap-y-4 text-sm font-semibold uppercase tracking-[0.16em] text-ink-soft">
               <span>Formaldehyde-Free</span>
-              <span className="hidden h-3 w-px bg-cream/25 sm:block" />
+              <span className="hidden h-3 w-px bg-ink/25 sm:block" />
               <span>Vegan &amp; Halal</span>
-              <span className="hidden h-3 w-px bg-cream/25 sm:block" />
+              <span className="hidden h-3 w-px bg-ink/25 sm:block" />
               <span>Trusted by 70,000+ Salons</span>
             </div>
           </Reveal>
         </div>
 
         {/* Scroll cue */}
-        <div className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-cream/60 sm:flex">
-          <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+        <div className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-ink/50 sm:flex">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.3em]">
+            Scroll
+          </span>
           <svg
             className="animate-cue"
             width="16"
@@ -140,12 +141,12 @@ export default function Home() {
       </section>
 
       {/* ---------------- MARQUEE ---------------- */}
-      <section className="overflow-hidden bg-cream-deep py-5">
+      <section className="overflow-hidden bg-cream-deep py-6">
         <div className="flex w-max animate-marquee items-center gap-12 whitespace-nowrap">
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
             <span
               key={i}
-              className="flex items-center gap-12 text-sm uppercase tracking-[0.22em] text-ink-soft"
+              className="flex items-center gap-12 text-base font-semibold uppercase tracking-[0.2em] text-ink"
             >
               {item}
               <span className="text-gold">✦</span>
@@ -273,7 +274,7 @@ export default function Home() {
               <Link href={`/products/${product.slug}`} className="group block">
                 <div className="card-lift relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream-deep">
                   <div className="absolute -right-10 top-0 h-40 w-40 rounded-full bg-gold/15 blur-3xl transition-opacity duration-500 group-hover:opacity-90" />
-                  <span className="absolute left-5 top-5 z-10 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">
+                  <span className="absolute left-5 top-5 z-10 text-xs font-bold uppercase tracking-[0.2em] text-gold">
                     {product.category}
                   </span>
 

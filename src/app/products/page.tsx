@@ -32,7 +32,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
       <Link href={`/products/${product.slug}`} className="group block">
         <div className="card-lift relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream-deep">
           <div className="absolute -right-10 top-0 h-40 w-40 rounded-full bg-gold/15 blur-3xl transition-opacity duration-500 group-hover:opacity-90" />
-          <span className="absolute left-5 top-5 z-10 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">
+          <span className="absolute left-5 top-5 z-10 text-xs font-bold uppercase tracking-[0.2em] text-gold">
             {product.category}
           </span>
           <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">

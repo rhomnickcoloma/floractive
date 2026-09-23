@@ -33,22 +33,23 @@ export function SectionDivider({ tone = "cream" }: SectionDividerProps) {
             backgroundImage: `linear-gradient(to right, transparent, ${rule})`,
           }}
         />
-        <svg
-          width="46"
-          height="30"
-          viewBox="0 0 64 42"
-          fill="none"
+        <span
           className="shrink-0"
-        >
-          <path
-            d="M6 36 L11 15 L22 27 L32 9 L42 27 L53 15 L58 36 Z"
-            fill={crown}
-          />
-          <rect x="8" y="37" width="48" height="2.4" rx="1.2" fill={crown} />
-          <circle cx="11" cy="12" r="2.4" fill={crown} />
-          <circle cx="32" cy="6" r="2.6" fill={crown} />
-          <circle cx="53" cy="12" r="2.4" fill={crown} />
-        </svg>
+          style={{
+            display: "block",
+            width: "44px",
+            height: "34px",
+            backgroundColor: crown,
+            WebkitMaskImage: "url(/images/brand/logo-b.png)",
+            maskImage: "url(/images/brand/logo-b.png)",
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+            WebkitMaskPosition: "center",
+            maskPosition: "center",
+            WebkitMaskSize: "contain",
+            maskSize: "contain",
+          }}
+        />
         <span
           className="h-px flex-1"
           style={{

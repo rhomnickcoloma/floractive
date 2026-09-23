@@ -59,8 +59,8 @@
     font-family: var(--font-sans), sans-serif;
     text-transform: uppercase;
     letter-spacing: var(--tracking-luxe);
-    font-weight: 600;
-    font-size: 0.72rem;
+    font-weight: 700;
+    font-size: 0.82rem;
   }
 
   .text-balance {

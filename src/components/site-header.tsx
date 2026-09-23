@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -16,16 +17,18 @@ const INSTAGRAM = "https://www.instagram.com/floractivephilippines/";
 const TIKTOK = "https://www.tiktok.com/@floractivephilippines";
 
 function Socials({ className = "" }: { className?: string }) {
+  const link =
+    "flex h-9 w-9 items-center justify-center rounded-full bg-cream/10 text-cream transition-colors hover:bg-gold hover:text-noir";
   return (
-    <div className={`flex items-center gap-4 ${className}`}>
+    <div className={`flex items-center gap-2.5 ${className}`}>
       <a
         href={FACEBOOK}
         target="_blank"
         rel="noreferrer"
         aria-label="Facebook — Floractive Philippines"
-        className="transition-colors hover:text-gold"
+        className={link}
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
           <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.2H7.4V13h2.6v8h3.5z" />
         </svg>
       </a>
@@ -34,9 +37,9 @@ function Socials({ className = "" }: { className?: string }) {
         target="_blank"
         rel="noreferrer"
         aria-label="Instagram — @floractivephilippines"
-        className="transition-colors hover:text-gold"
+        className={link}
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
           <rect x="3" y="3" width="18" height="18" rx="5" />
           <circle cx="12" cy="12" r="4" />
           <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
@@ -47,9 +50,9 @@ function Socials({ className = "" }: { className?: string }) {
         target="_blank"
         rel="noreferrer"
         aria-label="TikTok — @floractivephilippines"
-        className="transition-colors hover:text-gold"
+        className={link}
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
           <path d="M16.5 3c.3 2 1.5 3.5 3.5 3.8v2.5c-1.3 0-2.5-.4-3.5-1v5.9c0 3-2.2 5.3-5.1 5.3S6.3 19.2 6.3 16.4c0-2.7 2.1-4.9 4.8-4.9.3 0 .6 0 .9.1v2.6c-.3-.1-.6-.2-.9-.2-1.3 0-2.3 1-2.3 2.3s1 2.3 2.3 2.3 2.4-1 2.4-2.5V3h3z" />
         </svg>
       </a>
@@ -92,11 +95,15 @@ export function SiteHeader() {
       </div>
 
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-        <Link href="/" className="group flex flex-col leading-none">
-          <span className="font-serif text-2xl font-semibold tracking-wide text-noir">
-            FLORACTIVE
-          </span>
-          <span className="eyebrow mt-1 text-noir/65">Philippines</span>
+        <Link href="/" aria-label="Floractive Philippines — Home" className="group">
+          <Image
+            src="/images/brand/header-logo-b.png"
+            alt="Floractive Philippines"
+            width={834}
+            height={199}
+            priority
+            className="h-9 w-auto sm:h-10 lg:h-11"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
