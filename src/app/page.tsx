@@ -75,7 +75,7 @@ export default function Home() {
             </p>
           </Reveal>
           <Reveal delay={200}>
-            <h1 className="mt-6 max-w-4xl text-balance text-5xl font-extrabold leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
+            <h1 className="text-glow-white mt-6 max-w-4xl text-balance text-5xl font-extrabold leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
               The Original{" "}
               <span className="italic text-foil">Brazilian Nanoplasty</span> by
               Floractive

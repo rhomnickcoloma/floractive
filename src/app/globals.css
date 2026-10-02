@@ -72,6 +72,13 @@
     max-width: 62ch;
   }
 
+  /* Soft white halo/drop shadow for legibility over imagery.
+     Uses drop-shadow filters so it also applies to clipped foil text. */
+  .text-glow-white {
+    filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.95))
+      drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+  }
+
   /* Premium card lift on hover */
   .card-lift {
     transition:
