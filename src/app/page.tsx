@@ -35,10 +35,10 @@ type Stat = {
 };
 
 const STATS: Stat[] = [
-  { to: 70000, suffix: "+", grouped: true, label: "Salons worldwide" },
-  { to: 100, suffix: "+", grouped: true, label: "Countries available" },
+  { display: "1st", label: "Pioneer Nanoplasty" },
   { to: 2011, grouped: false, label: "Pioneering since" },
-  { display: "1st", label: "Original Nanoplasty" },
+  { to: 100, suffix: "+", grouped: true, label: "Countries available" },
+  { to: 70000, suffix: "+", grouped: true, label: "Salons worldwide" },
 ];
 
 const GALLERY = [
@@ -163,7 +163,7 @@ export default function Home() {
           </p>
           <span className="hairline mx-auto mt-6 block w-16" />
           <p className="mt-8 text-balance font-serif text-3xl font-light leading-[1.35] text-ink sm:text-4xl lg:text-[2.7rem]">
-            A revolutionary hair straightening and reconstruction treatment
+            A superior hair straightening and reconstruction treatment
             designed to replace traditional chemical straightening and keratin
             treatments — preserving the{" "}
             <span className="italic text-gold">health and integrity</span> of the
@@ -225,7 +225,7 @@ export default function Home() {
               fiber without fumes, discomfort or harsh chemicals.
             </p>
 
-            <p className="mt-12 border-b border-cream/15 pb-4 text-sm uppercase tracking-[0.2em] text-cream/50">
+            <p className="mt-12 border-b border-cream/15 pb-4 text-base font-semibold uppercase tracking-[0.2em] text-cream/60">
               The Benefits
             </p>
             <ul className="mt-2">
@@ -261,7 +261,7 @@ export default function Home() {
             </div>
             <Link
               href="/products"
-              className="inline-flex shrink-0 items-center gap-3 text-sm uppercase tracking-[0.2em] text-gold transition-all hover:gap-5"
+              className="inline-flex shrink-0 items-center gap-3 text-base font-semibold uppercase tracking-[0.2em] text-gold transition-all hover:gap-5"
             >
               View all <span>→</span>
             </Link>
@@ -274,7 +274,7 @@ export default function Home() {
               <Link href={`/products/${product.slug}`} className="group block">
                 <div className="card-lift relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream-deep">
                   <div className="absolute -right-10 top-0 h-40 w-40 rounded-full bg-gold/15 blur-3xl transition-opacity duration-500 group-hover:opacity-90" />
-                  <span className="absolute left-5 top-5 z-10 text-xs font-bold uppercase tracking-[0.2em] text-gold">
+                  <span className="absolute left-5 top-5 z-10 text-sm font-bold uppercase tracking-[0.2em] text-gold">
                     {product.category}
                   </span>
 
@@ -293,8 +293,8 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-semibold text-ink">
                     {product.name}
                   </h3>
-                  <p className="mt-1 text-sm text-ink-soft">{product.subtitle}</p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold transition-all group-hover:gap-4">
+                  <p className="mt-1 text-base text-ink-soft">{product.subtitle}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-gold transition-all group-hover:gap-4">
                     Discover <span>→</span>
                   </span>
                 </div>

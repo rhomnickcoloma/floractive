@@ -41,7 +41,8 @@ export default function ContactPage() {
 
       {/* Body */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-10 lg:py-28">
+          {/* Intro text — full width of the wrapper */}
           <Reveal>
             <p className="text-lg leading-relaxed text-ink-soft">
               Exceptional service is at the heart of the Floractive experience.
@@ -57,41 +58,56 @@ export default function ContactPage() {
             </p>
           </Reveal>
 
-          <Reveal delay={120}>
-            <div className="mt-12 divide-y divide-ink/10 border-y border-ink/10">
-              <div className="flex flex-col gap-1 py-6 sm:flex-row sm:items-center sm:justify-between">
-                <span className="eyebrow text-gold">Email</span>
-                <a
-                  href="mailto:floractive@filiamph.com"
-                  className="font-serif text-2xl text-ink transition-colors hover:text-gold"
-                >
-                  floractive@filiamph.com
-                </a>
-              </div>
-              <div className="flex flex-col gap-1 py-6 sm:flex-row sm:items-center sm:justify-between">
-                <span className="eyebrow text-gold">Facebook</span>
-                <a
-                  href={FACEBOOK}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-serif text-2xl text-ink transition-colors hover:text-gold"
-                >
-                  Floractive Philippines
-                </a>
-              </div>
-            </div>
-          </Reveal>
+          {/* Image + form — two columns below */}
+          <div className="mt-16 grid items-center gap-12 lg:grid-cols-[auto_1fr] lg:gap-20">
+            <Reveal className="flex justify-center lg:justify-start">
+              <Image
+                src="/images/brand/fil-i-am-logo.png"
+                alt="FILIAM Business Ventures Inc."
+                width={1532}
+                height={1774}
+                className="h-auto w-48 sm:w-56"
+              />
+            </Reveal>
 
-          <Reveal delay={200}>
-            <div className="mt-12">
-              <Link
-                href="mailto:floractive@filiamph.com"
-                className="btn-shine inline-flex items-center justify-center gap-3 bg-noir px-10 py-5 text-xs uppercase tracking-[0.22em] text-cream transition-colors hover:bg-gold hover:text-noir"
-              >
-                Email Us <span>→</span>
-              </Link>
+            <div>
+              <Reveal delay={120}>
+                <div className="divide-y divide-ink/10 border-y border-ink/10">
+                  <div className="flex flex-col gap-1 py-6 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="eyebrow text-gold">Email</span>
+                    <a
+                      href="mailto:floractive@filiamph.com"
+                      className="font-serif text-2xl text-ink transition-colors hover:text-gold"
+                    >
+                      floractive@filiamph.com
+                    </a>
+                  </div>
+                  <div className="flex flex-col gap-1 py-6 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="eyebrow text-gold">Facebook</span>
+                    <a
+                      href={FACEBOOK}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-serif text-2xl text-ink transition-colors hover:text-gold"
+                    >
+                      Floractive Philippines
+                    </a>
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal delay={200}>
+                <div className="mt-12">
+                  <Link
+                    href="mailto:floractive@filiamph.com"
+                    className="btn-shine inline-flex items-center justify-center gap-3 bg-noir px-10 py-5 text-xs uppercase tracking-[0.22em] text-cream transition-colors hover:bg-gold hover:text-noir"
+                  >
+                    Email Us <span>→</span>
+                  </Link>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
     </>

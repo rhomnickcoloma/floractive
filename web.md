@@ -22,7 +22,7 @@ Use this sites as basis for the design
 ### Floractive Website Content:
 The Original Brazilian Nanoplasty by Floractive
 Floractive is the creator of the world's First and Original Nanoplasty - 100% pure, Chemical-Free, Formaldehyde-Free, and Glyoxylic Acid Free, Vegan & Halal-friendly, delivering powerful hair reconstruction and straightening solutions. 
-The Original Nanoplasty is a revolutionary hair straightening and reconstruction treatment designed to replace traditional chemical straightening and keratin treatments. Its advanced technology combines the best hair repair, reconstruction, and straightening benefits while preserving the health and integrity of the hair.
+The Original Nanoplasty is a superior hair straightening and reconstruction treatment designed to replace traditional chemical straightening and keratin treatments. Its advanced technology combines the best hair repair, reconstruction, and straightening benefits while preserving the health and integrity of the hair.
 Why Professionals Choose Floractive
 Trusted by over 70,000 salons worldwide
 Available in more than 100 countries

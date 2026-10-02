@@ -32,7 +32,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
       <Link href={`/products/${product.slug}`} className="group block">
         <div className="card-lift relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream-deep">
           <div className="absolute -right-10 top-0 h-40 w-40 rounded-full bg-gold/15 blur-3xl transition-opacity duration-500 group-hover:opacity-90" />
-          <span className="absolute left-5 top-5 z-10 text-xs font-bold uppercase tracking-[0.2em] text-gold">
+          <span className="absolute left-5 top-5 z-10 text-sm font-bold uppercase tracking-[0.2em] text-gold">
             {product.category}
           </span>
           <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
@@ -50,13 +50,13 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
           <h3 className="font-serif text-2xl font-semibold text-ink">
             {product.name}
           </h3>
-          <p className="mt-1 text-sm text-ink-soft">{product.subtitle}</p>
+          <p className="mt-1 text-base text-ink-soft">{product.subtitle}</p>
           {product.sizes?.length > 0 && (
-            <p className="mt-3 text-xs uppercase tracking-[0.18em] text-ink-soft/70">
+            <p className="mt-3 text-sm uppercase tracking-[0.18em] text-ink-soft/70">
               {product.sizes.join(" · ")}
             </p>
           )}
-          <span className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold transition-all group-hover:gap-4">
+          <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-gold transition-all group-hover:gap-4">
             Discover <span>→</span>
           </span>
         </div>
@@ -105,7 +105,7 @@ export default function ProductsPage() {
             <a
               key={group.category}
               href={`#${group.category.toLowerCase().replace(/\s+/g, "-")}`}
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-soft transition-colors hover:text-gold"
+              className="text-sm font-semibold uppercase tracking-[0.2em] text-ink-soft transition-colors hover:text-gold"
             >
               {group.category}
             </a>

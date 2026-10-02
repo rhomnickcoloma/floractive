@@ -92,7 +92,7 @@ export default async function ProductDetailPage({
 
             {product.sizes?.length > 0 && (
               <div className="mt-10">
-                <p className="text-xs uppercase tracking-[0.2em] text-ink-soft/70">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink-soft/70">
                   Available Sizes
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3">
@@ -121,7 +121,7 @@ export default async function ProductDetailPage({
 
             <Link
               href="mailto:floractive@filiamph.com"
-              className="btn-shine mt-10 inline-flex items-center justify-center gap-3 bg-rose px-9 py-4 text-xs uppercase tracking-[0.22em] text-cream transition-all hover:bg-rose-deep"
+              className="btn-shine mt-10 inline-flex items-center justify-center gap-3 bg-rose px-9 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white transition-all hover:bg-rose-deep"
             >
               Inquire to Order <span>→</span>
             </Link>
@@ -139,7 +139,7 @@ export default async function ProductDetailPage({
                 </h2>
                 <Link
                   href="/products"
-                  className="hidden shrink-0 items-center gap-3 text-sm uppercase tracking-[0.2em] text-gold transition-all hover:gap-5 sm:inline-flex"
+                  className="hidden shrink-0 items-center gap-3 text-base font-semibold uppercase tracking-[0.2em] text-gold transition-all hover:gap-5 sm:inline-flex"
                 >
                   View all <span>→</span>
                 </Link>
