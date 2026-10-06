@@ -61,19 +61,16 @@ export default async function ProductDetailPage({
 
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:py-20">
           <Reveal>
-            <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream-deep">
-              <div className="absolute -right-16 top-0 h-64 w-64 rounded-full bg-gold/15 blur-3xl" />
-              <div className="relative h-full w-full">
-                <Image
-                  src={product.image}
-                  alt={`${product.name} — ${product.subtitle}`}
-                  fill
-                  priority
-                  quality={90}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain p-10"
-                />
-              </div>
+            <div className="relative aspect-[2/3] overflow-hidden">
+              <Image
+                src={product.image}
+                alt={`${product.name} — ${product.subtitle}`}
+                fill
+                priority
+                quality={90}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
           </Reveal>
 
@@ -120,7 +117,7 @@ export default async function ProductDetailPage({
             </dl>
 
             <Link
-              href="mailto:floractive@filiamph.com"
+              href="mailto:steph@filiamph.com"
               className="btn-shine mt-10 inline-flex items-center justify-center gap-3 bg-rose px-9 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white transition-all hover:bg-rose-deep"
             >
               Inquire to Order <span>→</span>
@@ -152,14 +149,14 @@ export default async function ProductDetailPage({
                     href={`/products/${item.slug}`}
                     className="group block"
                   >
-                    <div className="card-lift relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream">
+                    <div className="card-lift relative aspect-[2/3] overflow-hidden">
                       <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
                         <Image
                           src={item.image}
                           alt={`${item.name} — ${item.subtitle}`}
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                          className="object-contain p-8"
+                          className="object-cover"
                         />
                       </div>
                     </div>

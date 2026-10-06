@@ -272,25 +272,23 @@ export default function Home() {
           {FEATURED_PRODUCTS.map((product, i) => (
             <Reveal key={product.id} delay={i * 110}>
               <Link href={`/products/${product.slug}`} className="group block">
-                <div className="card-lift relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cream-deep">
-                  <div className="absolute -right-10 top-0 h-40 w-40 rounded-full bg-gold/15 blur-3xl transition-opacity duration-500 group-hover:opacity-90" />
-                  <span className="absolute left-5 top-5 z-10 text-sm font-bold uppercase tracking-[0.2em] text-gold">
-                    {product.category}
-                  </span>
-
+                <div className="card-lift relative aspect-[2/3] overflow-hidden">
                   <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
                     <Image
                       src={product.image}
                       alt={`${product.name} — ${product.subtitle}`}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-contain p-8"
+                      className="object-cover"
                     />
                   </div>
                 </div>
 
                 <div className="mt-5">
-                  <h3 className="font-serif text-2xl font-semibold text-ink">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
+                    {product.category}
+                  </p>
+                  <h3 className="mt-0.5 font-serif text-2xl font-semibold text-ink">
                     {product.name}
                   </h3>
                   <p className="mt-1 text-base text-ink-soft">{product.subtitle}</p>
@@ -525,10 +523,10 @@ export default function Home() {
           </Reveal>
           <Reveal delay={140}>
             <Link
-              href="mailto:floractive@filiamph.com"
+              href="mailto:steph@filiamph.com"
               className="btn-shine inline-flex items-center justify-center gap-3 bg-noir px-10 py-5 text-xs uppercase tracking-[0.22em] text-cream transition-colors hover:bg-gold hover:text-noir"
             >
-              floractive@filiamph.com <span>→</span>
+              steph@filiamph.com <span>→</span>
             </Link>
           </Reveal>
         </div>

@@ -6,7 +6,7 @@ import { Reveal } from "@/components/reveal";
 export const metadata: Metadata = {
   title: "Contact Us — Floractive Philippines",
   description:
-    "Get in touch with Floractive Philippines through our distributor FILIAM Business Ventures Inc. Email floractive@filiamph.com.",
+    "Get in touch with Floractive Philippines through our distributor FILIAM Business Ventures Inc. Email steph@filiamph.com.",
 };
 
 const FACEBOOK = "https://www.facebook.com/floractivephilippines";
@@ -76,10 +76,10 @@ export default function ContactPage() {
                   <div className="flex flex-col gap-1 py-6 sm:flex-row sm:items-center sm:justify-between">
                     <span className="eyebrow text-gold">Email</span>
                     <a
-                      href="mailto:floractive@filiamph.com"
+                      href="mailto:steph@filiamph.com"
                       className="font-serif text-2xl text-ink transition-colors hover:text-gold"
                     >
-                      floractive@filiamph.com
+                      steph@filiamph.com
                     </a>
                   </div>
                   <div className="flex flex-col gap-1 py-6 sm:flex-row sm:items-center sm:justify-between">
@@ -99,7 +99,7 @@ export default function ContactPage() {
               <Reveal delay={200}>
                 <div className="mt-12">
                   <Link
-                    href="mailto:floractive@filiamph.com"
+                    href="mailto:steph@filiamph.com"
                     className="btn-shine inline-flex items-center justify-center gap-3 bg-noir px-10 py-5 text-xs uppercase tracking-[0.22em] text-cream transition-colors hover:bg-gold hover:text-noir"
                   >
                     Email Us <span>→</span>

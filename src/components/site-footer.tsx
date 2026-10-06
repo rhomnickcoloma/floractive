@@ -51,8 +51,8 @@ export function SiteFooter() {
             <p className="eyebrow text-gold">Contact</p>
             <ul className="mt-5 space-y-3 text-sm text-cream/70">
               <li>
-                <a href="mailto:floractive@filiamph.com" className="hover:text-gold">
-                  floractive@filiamph.com
+                <a href="mailto:steph@filiamph.com" className="hover:text-gold">
+                  steph@filiamph.com
                 </a>
               </li>
               <li className="text-cream/60">
