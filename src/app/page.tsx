@@ -61,7 +61,7 @@ export default function Home() {
             priority
             quality={90}
             sizes="(max-width: 1024px) 100vw, 60vw"
-            className="object-cover object-[center_20%]"
+            className="object-cover object-[center_20%] lg:translate-x-[7%]"
           />
           {/* Soft blend only on the far-left edge so the seam with the cream
               panel is smooth — fades to transparent well before the model */}
@@ -76,16 +76,16 @@ export default function Home() {
           </Reveal>
           <Reveal delay={200}>
             <h1 className="text-glow-white mt-6 max-w-4xl text-balance text-5xl font-extrabold leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
-              The Original{" "}
-              <span className="italic text-foil">Brazilian Nanoplasty</span> by
-              Floractive
+              <span className="block">The Original</span>
+              <span className="block italic text-foil">Brazilian Nanoplasty</span>
+              <span className="block">by Floractive</span>
             </h1>
           </Reveal>
           <Reveal delay={340}>
             <p className="mt-8 max-w-xl text-xl font-medium leading-relaxed text-ink-soft">
-              100% pure, chemical-free, formaldehyde-free and glyoxylic acid free
-              — delivering powerful hair reconstruction and straightening. Vegan
-              &amp; halal-friendly.
+              100% pure, formaldehyde-free and glyoxylic acid free — delivering
+              powerful hair reconstruction and straightening. Vegan &amp;
+              halal-friendly.
             </p>
           </Reveal>
 

@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "w-one",
-      "name": "W One",
+      "name": "W One Premium",
       "subtitle": "Original Nanoplasty",
       "slug": "w-one-original-nanoplasty",
       "category": "Straightening",
@@ -15,7 +15,7 @@
     },
     {
       "id": "wtwo-plex",
-      "name": "WTwo Plex",
+      "name": "W Two Plex",
       "subtitle": "Nanoplasty for Blonde & Fragile Hair",
       "slug": "wtwo-plex-nanoplasty",
       "category": "Straightening",
@@ -41,11 +41,11 @@
     },
     {
       "id": "gloss-protein",
-      "name": "Gloss Protein",
+      "name": "Gloss Protein Vegan Express 15",
       "subtitle": "Intensive Shine Treatment",
       "slug": "gloss-protein-treatment",
       "category": "Straightening",
-      "collection": "Gloss Protein",
+      "collection": "Gloss Protein Vegan Express 15",
       "sizes": ["100ml"],
       "description": "An intensive gloss-protein treatment that seals the cuticle for mirror-like shine and softness.",
       "image": "/images/product-images/Floractive-3772.jpg",
@@ -106,7 +106,7 @@
     },
     {
       "id": "golden-gloss-protein",
-      "name": "Golden Gloss Protein",
+      "name": "Golden Gloss Protein Vegan Express 15",
       "subtitle": "Nourishing Mask",
       "slug": "golden-gloss-protein",
       "category": "Treatment",
@@ -123,7 +123,7 @@
       "subtitle": "Maintenance Shampoo",
       "slug": "w1-shampoo",
       "category": "Home Care",
-      "collection": "W One Home Care",
+      "collection": "W One Premium Home Care",
       "sizes": ["300ml"],
       "description": "Home-care shampoo formulated to extend and protect the life of your Nanoplasty.",
       "image": "/images/product-images/Floractive-3857.jpg",
@@ -136,7 +136,7 @@
       "subtitle": "Shampoo, Conditioner & Leave-In",
       "slug": "w1-3in1",
       "category": "Home Care",
-      "collection": "W One Home Care",
+      "collection": "W One Premium Home Care",
       "sizes": ["300ml"],
       "description": "A 3-in-1 home-care system that cleanses, conditions and protects to maintain smoothness and shine.",
       "image": "/images/product-images/Floractive-3878.jpg",
@@ -158,11 +158,11 @@
     },
     {
       "id": "gloss-protein-shampoo",
-      "name": "Gloss Protein Shampoo",
+      "name": "Gloss Protein Vegan Express 15 Shampoo",
       "subtitle": "Home Care Shampoo",
       "slug": "gloss-protein-shampoo",
       "category": "Home Care",
-      "collection": "Gloss Protein",
+      "collection": "Gloss Protein Vegan Express 15",
       "sizes": ["300ml"],
       "description": "A gentle gloss-protein shampoo that cleanses while preserving alignment and shine.",
       "image": "/images/product-images/Floractive-3896.jpg",
@@ -171,16 +171,29 @@
     },
     {
       "id": "gloss-protein-mask",
-      "name": "Gloss Protein Mask",
+      "name": "Gloss Protein Vegan Express 15 Mask",
       "subtitle": "Home Care Mask",
       "slug": "gloss-protein-mask",
       "category": "Home Care",
-      "collection": "Gloss Protein",
+      "collection": "Gloss Protein Vegan Express 15",
       "sizes": ["250ml"],
       "description": "A nourishing gloss-protein mask that restores softness and brilliant shine between salon visits.",
       "image": "/images/product-images/Floractive-3905.jpg",
       "featured": false,
       "order": 14
+    },
+    {
+      "id": "macadamia-oil-mask-bottox",
+      "name": "Macadamia Natural Oil Mask Bottox",
+      "subtitle": "Deep Nourishing Mask",
+      "slug": "macadamia-natural-oil-mask-bottox",
+      "category": "Home Care",
+      "collection": "Macadamia Natural Oil",
+      "sizes": ["300g"],
+      "description": "A rich macadamia oil bottox mask that deeply nourishes, smooths and restores softness and shine between salon visits.",
+      "image": "/images/product-images/Floractive-3975.jpg",
+      "featured": false,
+      "order": 15
     }
   ]
 }

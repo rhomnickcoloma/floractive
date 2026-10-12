@@ -4,7 +4,6 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteChrome } from "@/components/site-chrome";
-import { CustomCursor } from "@/components/custom-cursor";
 import { Preloader } from "@/components/preloader";
 
 const serif = Playfair_Display({
@@ -38,7 +37,6 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-cream text-ink font-sans">
         <Preloader />
-        <CustomCursor />
         <SiteChrome />
         <SiteHeader />
         <main className="flex-1">{children}</main>
